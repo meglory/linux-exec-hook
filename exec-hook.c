@@ -27,8 +27,8 @@ int execve(const char *progname, char *const argv[], char *const envp[]) {
 
     sprintf(loginuid, "/proc/%d/loginuid", getppid());
 
-    syslog(LOG_INFO, "[exec-hook]progname: %s", progname);
-    syslog(LOG_INFO, "[exec-hook]argv: %s", argv);
+//    syslog(LOG_INFO, "[exec-hook]progname: %s", progname);
+//    syslog(LOG_INFO, "[exec-hook]argv: %s", argv);
 
     fp = fopen(loginuid, "r");
     if (fp == NULL) {
