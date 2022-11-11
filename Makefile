@@ -1,5 +1,5 @@
 all:
-	gcc -shared -fPIC exec-logger.c -o exec-logger.so -ldl
+	gcc -shared -fPIC exec-hook.c -o exec-hook.so -ldl
 
 clean:
 	rm -rf *.so *~
