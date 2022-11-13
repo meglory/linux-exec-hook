@@ -10,14 +10,12 @@ static execve_func_t old_execve = NULL;
 
 int execve(const char *filename, char *const argv[], char *const envp[]) {
     printf("[EXEC_HOOK] filename: %s, args: ", filename);
-    for(i = 0; argv[i] != '\0'; i++)
-    {
-        printf("%c ", argv[i]);
+    for (char *i = argv; *i != NULL; ++i) {
+        printf("%s ", *i);
     }
     printf(", envs: ");
-    for(i = 0; envp[i] != '\0'; i++)
-    {
-        printf("%c ", envp[i]);
+    for (char *i = envp; *i != NULL; ++i) {
+        printf("%s ", *i);
     }
     printf("\n");
     old_execve = dlsym(RTLD_NEXT, "execve");
