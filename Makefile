@@ -1,6 +1,6 @@
 
 all:
-	gcc -pipe -DDEBUG -g -shared -fPIC -D_REENTRANT exec-hook.c -o exec-hook.so -ldl -lrt
+	gcc -shared exec-hook.c -o exec-hook.so -Wall -Wfatal-errors -fPIC -g -ldl
 
 clean:
 	rm -rf *.so *~
