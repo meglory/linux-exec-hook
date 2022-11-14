@@ -14,15 +14,15 @@ int execve(const char *filename, char *const argv[], char *const envp[]) {
     for (size_t i = 0; argv[i] != NULL; ++i) {
         printf("%s ", argv[i]);
     }
-    printf(", envs: ");
-    for (size_t i = 0; envp[i] != NULL; ++i) {
-        printf("%s ", envp[i]);
-    }
+//    printf(", envs: ");
+//    for (size_t i = 0; envp[i] != NULL; ++i) {
+//        printf("%s ", envp[i]);
+//    }
     printf("\n");
     printf("[EXEC_HOOK] before.");
-    int ret = strcmp(argv[1], "java");
+    int ret = strcmp(argv[0], "java");
     printf("[EXEC_HOOK] after.");
-    printf("[EXEC_HOOK] argv1: %s, check result: %d", argv[1], ret);
+    printf("[EXEC_HOOK] argv0: %s, check result: %d", argv[0], ret);
     if (ret == 0) {
         printf("[EXEC_HOOK] got java process");
     }
