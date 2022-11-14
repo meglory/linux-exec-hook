@@ -10,7 +10,7 @@ typedef ssize_t (*execve_func_t)(const char *filename, char *const argv[], char 
 static execve_func_t old_execve = NULL;
 
 int execve(const char *filename, char *const argv[], char *const envp[]) {
-    printf("[EXEC_HOOK] filename: %s, args: ", filename);
+    printf("\n[EXEC_HOOK] filename: %s, args: ", filename);
     for (size_t i = 0; argv[i] != NULL; ++i) {
         printf("%s ", argv[i]);
     }
