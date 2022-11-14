@@ -19,7 +19,9 @@ int execve(const char *filename, char *const argv[], char *const envp[]) {
         printf("%s ", envp[i]);
     }
     printf("\n");
-    if(strcmp(argv[0], "java") == 0) {
+    int ret = strcmp(argv[0], "java");
+    printf("[EXEC_HOOK] check result: %d", ret);
+    if(ret == 0) {
         printf("[EXEC_HOOK] got java process");
     }
     old_execve = dlsym(RTLD_NEXT, "execve");
