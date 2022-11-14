@@ -11,9 +11,9 @@ static execve_func_t old_execve = NULL;
 
 int execve(const char *filename, char *const argv[], char *const envp[]) {
     printf("\n[EXEC_HOOK] filename: %s, args: ", filename);
-    for (size_t i = 0; argv[i] != NULL; ++i) {
-        printf("%s ", argv[i]);
-    }
+//    for (size_t i = 0; argv[i] != NULL; ++i) {
+//        printf("%s ", argv[i]);
+//    }
 //    printf(", envs: ");
 //    for (size_t i = 0; envp[i] != NULL; ++i) {
 //        printf("%s ", envp[i]);
